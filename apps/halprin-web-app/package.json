@@ -104,7 +104,7 @@
     "@babel/core": "7.14.8",
     "@contredanse/common": "workspace:*",
     "@contredanse/db-main": "workspace:*",
-    "@emotion/react": "11.4.0",
+    "@emotion/react": "11.4.1",
     "@emotion/styled": "11.3.0",
     "@headlessui/react": "1.4.0",
     "@heroicons/react": "1.0.3",
