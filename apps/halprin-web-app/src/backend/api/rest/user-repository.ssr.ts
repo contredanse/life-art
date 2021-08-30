@@ -11,8 +11,8 @@ export class UserRepositorySsr {
 
   /**
    * @throws Error
+   * eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
    */
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   getUserByEmail = async (email: string) => {
     try {
       Asserts.nonEmptyString(email, () => {
