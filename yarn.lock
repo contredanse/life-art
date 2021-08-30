@@ -8510,6 +8510,7 @@ __metadata:
     shell-quote: 1.7.2
     size-limit: 5.0.3
     string-strip-html: 8.3.0
+    superjson: 1.7.5
     symlink-dir: 5.0.1
     sync-directory: 2.2.22
     tailwindcss: 2.2.9
@@ -15961,6 +15962,16 @@ resolve@^2.0.0-next.3:
   version: 4.0.10
   resolution: "stylis@npm:4.0.10"
   checksum: 0fecaf5c234ec3ffcb0afc21478742a815a21cb964365259789be9c1692e72e13d8c081c1150fd76ed2146633a3251cdecd6e0c120b158f44bd74c38f81cafb3
+  languageName: node
+  linkType: hard
+
+"superjson@npm:1.7.5":
+  version: 1.7.5
+  resolution: "superjson@npm:1.7.5"
+  dependencies:
+    debug: ^4.3.1
+    lodash.clonedeep: ^4.5.0
+  checksum: 629c3cf3343203f8ab585046a7dfb9c730df3e08b00f4e78a029ddf148f93c22c65e0455dc4a7c6a72b3228dd9a8b39ff46ed5845ca555c14e92d85e02d2cae5
   languageName: node
   linkType: hard
 

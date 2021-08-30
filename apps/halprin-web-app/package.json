@@ -136,6 +136,7 @@
     "react-player": "2.9.0",
     "react-query": "3.21.1",
     "sharp": "0.29.0",
+    "superjson": "1.7.5",
     "type-fest": "2.1.0"
   }
 }
