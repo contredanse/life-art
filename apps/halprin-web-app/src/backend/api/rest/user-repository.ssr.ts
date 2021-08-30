@@ -2,7 +2,7 @@ import { PrismaClientDbMain } from '@contredanse/db-main';
 import { BadRequest, InternalServerError, NotFound } from '@tsed/exceptions';
 import { Asserts, UnPromisify } from '@contredanse/common';
 
-export type GetPosts = UnPromisify<
+export type GetUserByEmail = UnPromisify<
   ReturnType<typeof UserRepositorySsr['prototype']['getUserByEmail']>
 >;
 
