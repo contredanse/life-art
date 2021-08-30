@@ -6,12 +6,13 @@ export type GetUserByEmail = UnPromisify<
   ReturnType<typeof UserRepositorySsr['prototype']['getUserByEmail']>
 >;
 
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
 export class UserRepositorySsr {
   constructor(private prisma: PrismaClientDbMain) {}
 
   /**
    * @throws Error
-   * eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
    */
   getUserByEmail = async (email: string) => {
     try {
