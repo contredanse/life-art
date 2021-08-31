@@ -15,10 +15,11 @@ enum Role {
 
 model User {
   id            Int       @id @default(autoincrement())
-  role          Role      @default(USER)
+  roles         Role[]
   firstName     String?   @map(name: "first_name")
   lastName      String?   @map(name: "last_name")
   nickname      String    @unique
+  password      String?
   email         String    @unique
   emailVerified DateTime? @map(name: "email_verified")
   createdAt     DateTime  @default(now()) @map(name: "created_at")
@@ -41,11 +42,24 @@ model UserProfile {
 
 model App {
   id         Int            @id @default(autoincrement())
+  reference  String         @unique
   name       String
   url        String
   users      UserApps[]
 
   @@map(name: "app")
+}
+
+model UserMediaHistory {
+  id             Int           @id @default(autoincrement())
+  email          String
+  mediaSlug      String        @map(name: "media_slug")
+  appReference   String?       @map(name: "app_reference")
+  favoritedAt    DateTime?     @map(name: "favorited_at")
+  fullyWatchedAt DateTime?     @map(name: "fully_watched_at")
+
+  @@unique([email, mediaSlug, appReference])
+  @@map(name: "user_media_history")
 }
 
 model UserApps {
