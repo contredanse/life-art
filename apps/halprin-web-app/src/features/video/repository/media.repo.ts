@@ -23,11 +23,18 @@ export class MediaRepo {
     this.media = props?.mediaData ?? mediaData;
     this.credits = props?.creditsData ?? creditsData;
   }
-  findByCategory = (category: MediaCategorySlug): Media[] => {
-    return this.media.filter((media) => media.category === category);
+  findByCategory = (category: MediaCategorySlug): MediaWithCredits[] => {
+    return this.withDenormalizedCredits(
+      this.media.filter((media) => media.category === category)
+    );
   };
-  findBySlug = (slug: string): Media | null => {
-    return this.media.filter((media) => media.media_slug === slug)?.[0] ?? null;
+  findBySlug = (slug: string): MediaWithCredits | null => {
+    const media =
+      this.media.filter((media) => media.media_slug === slug)?.[0] ?? null;
+    if (media === null) {
+      return null;
+    }
+    return this.withDenormalizedCredits([media])[0];
   };
   search = (
     params: SearchParams,
@@ -76,7 +83,12 @@ export class MediaRepo {
         });
       }
     }
-    const result = filtered.map((media) => {
+
+    return this.withDenormalizedCredits(filtered);
+  };
+
+  withDenormalizedCredits = (media: Media[]): MediaWithCredits[] => {
+    return media.map((media) => {
       const credits: Credit[] = [];
       (media.creditsIds ?? []).forEach((creditId) => {
         const credit = this.credits.filter((cred) => cred.id === creditId)?.[0];
@@ -89,6 +101,5 @@ export class MediaRepo {
         credits: credits,
       };
     });
-    return result;
   };
 }
