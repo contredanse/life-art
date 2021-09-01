@@ -3552,6 +3552,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/bcryptjs@npm:2.4.2":
+  version: 2.4.2
+  resolution: "@types/bcryptjs@npm:2.4.2"
+  checksum: 220dade7b0312b41e23ccfb15f2ddde7804eb3c7ef41db41a6c49054be1e19a15eb3dd8c8ef196494f0866307cce22ad6f3f272941387124707d81dc66155bbc
+  languageName: node
+  linkType: hard
+
 "@types/cors@npm:2.8.12":
   version: 2.8.12
   resolution: "@types/cors@npm:2.8.12"
@@ -4849,6 +4856,13 @@ __metadata:
   dependencies:
     tweetnacl: ^0.14.3
   checksum: 4edfc9fe7d07019609ccf797a2af28351736e9d012c8402a07120c4453a3b789a15f2ee1530dc49eee8f7eb9379331a8dd4b3766042b9e502f74a68e7f662291
+  languageName: node
+  linkType: hard
+
+"bcryptjs@npm:2.4.3":
+  version: 2.4.3
+  resolution: "bcryptjs@npm:2.4.3"
+  checksum: 0e80ed852a41f5dfb1853f53ee14a7390b0ef263ce05dba6e2ef3cd919dfad025a7c21ebcfe5bc7fa04b100990edf90c7a877ff7fe623d3e479753253131b629
   languageName: node
   linkType: hard
 
@@ -8472,6 +8486,7 @@ __metadata:
     "@testing-library/react": 12.0.0
     "@testing-library/react-hooks": 7.0.2
     "@tsed/exceptions": 6.64.2
+    "@types/bcryptjs": 2.4.2
     "@types/cors": 2.8.12
     "@types/graphql": 14.5.0
     "@types/node": 16.7.7
@@ -8483,6 +8498,7 @@ __metadata:
     apollo-server-micro: 3.3.0
     autoprefixer: 10.3.3
     axios: 0.21.1
+    bcryptjs: 2.4.3
     code-block-writer: 10.1.1
     cors: 2.8.5
     cross-env: 7.0.3
@@ -8529,6 +8545,7 @@ __metadata:
     shell-quote: 1.7.2
     size-limit: 5.0.3
     string-strip-html: 8.3.0
+    superjson: 1.7.5
     symlink-dir: 5.0.1
     sync-directory: 2.2.22
     tailwindcss: 2.2.9
@@ -15996,6 +16013,16 @@ resolve@^2.0.0-next.3:
   version: 4.0.10
   resolution: "stylis@npm:4.0.10"
   checksum: 0fecaf5c234ec3ffcb0afc21478742a815a21cb964365259789be9c1692e72e13d8c081c1150fd76ed2146633a3251cdecd6e0c120b158f44bd74c38f81cafb3
+  languageName: node
+  linkType: hard
+
+"superjson@npm:1.7.5":
+  version: 1.7.5
+  resolution: "superjson@npm:1.7.5"
+  dependencies:
+    debug: ^4.3.1
+    lodash.clonedeep: ^4.5.0
+  checksum: 629c3cf3343203f8ab585046a7dfb9c730df3e08b00f4e78a029ddf148f93c22c65e0455dc4a7c6a72b3228dd9a8b39ff46ed5845ca555c14e92d85e02d2cae5
   languageName: node
   linkType: hard
 
