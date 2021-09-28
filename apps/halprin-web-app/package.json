@@ -94,7 +94,7 @@
     "rimraf": "3.0.2",
     "sass": "1.41.1",
     "shell-quote": "1.7.2",
-    "size-limit": "5.0.3",
+    "size-limit": "5.0.5",
     "string-strip-html": "8.3.0",
     "symlink-dir": "5.0.1",
     "sync-directory": "2.2.22",
