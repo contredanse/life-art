@@ -8533,7 +8533,7 @@ __metadata:
     next-seo: 4.27.0
     next-transpile-modules: 8.0.0
     npm-run-all: 4.1.5
-    postcss: 8.3.6
+    postcss: 8.3.9
     postcss-flexbugs-fixes: 5.0.2
     postcss-preset-env: 6.7.0
     prettier: 2.4.1
@@ -11641,12 +11641,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.1.23":
-  version: 3.1.23
-  resolution: "nanoid@npm:3.1.23"
+"nanoid@npm:^3.1.23, nanoid@npm:^3.1.28":
+  version: 3.1.28
+  resolution: "nanoid@npm:3.1.28"
   bin:
     nanoid: bin/nanoid.cjs
-  checksum: 8fa8dc3283a4fa159700a36cb22f61197547c8155831cb74f1b9c51fbc29ea80c136fd91001468d147a31d3a77f884958aec6c1beabac903c89780acacca9327
+  checksum: ae2fa9f3ce7a690ec62fc2fdf92345f023b20db760024f767c25ad392bde6414dc0b44a8e66dc1209426f36e4771e63b09ad2b49d8f1b04063b37e21b46af8d0
   languageName: node
   linkType: hard
 
@@ -12878,6 +12878,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"picocolors@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "picocolors@npm:0.2.1"
+  checksum: 3b0f441f0062def0c0f39e87b898ae7461c3a16ffc9f974f320b44c799418cabff17780ee647fda42b856a1dc45897e2c62047e1b546d94d6d5c6962f45427b2
+  languageName: node
+  linkType: hard
+
 "picomatch@npm:^2.0.4, picomatch@npm:^2.0.5, picomatch@npm:^2.2.1, picomatch@npm:^2.2.2, picomatch@npm:^2.2.3":
   version: 2.3.0
   resolution: "picomatch@npm:2.3.0"
@@ -13785,14 +13792,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.3.6, postcss@npm:^7.0.30 || ^8.0.0, postcss@npm:^8.1.6, postcss@npm:^8.2.1":
-  version: 8.3.6
-  resolution: "postcss@npm:8.3.6"
+"postcss@npm:8.3.9, postcss@npm:^7.0.30 || ^8.0.0, postcss@npm:^8.1.6, postcss@npm:^8.2.1":
+  version: 8.3.9
+  resolution: "postcss@npm:8.3.9"
   dependencies:
-    colorette: ^1.2.2
-    nanoid: ^3.1.23
+    nanoid: ^3.1.28
+    picocolors: ^0.2.1
     source-map-js: ^0.6.2
-  checksum: ff55b91bea21f42c2a94d77fd05c3f66dd15889c68506cf1dbb9cdee8c3b9e9d0e219bcbc6e61a107bd63e3cac0670176486e2a5794c106a4e1b9babceb79317
+  checksum: b64d0e59bc027b2f09e5a84ca32b4f0620553812110e42295a79fd0e6ea664779e575c2d5e8d35a1b0804f0933ec878404c6e161e008b5bc51cba44eaef216ef
   languageName: node
   linkType: hard
 
