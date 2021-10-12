@@ -79,10 +79,6 @@ jobs:
         run: |
           yarn install --immutable
 
-      - name: Check for duplicate dependencies in lock file
-        run: |
-          yarn dedupe --check
-
       #- name: Generate Prisma client
       #  working-directory: apps/web-app
       #  run: |
