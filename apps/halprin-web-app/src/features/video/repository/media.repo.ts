@@ -1,8 +1,10 @@
-import { Media, MediaCategorySlug } from '@/data/data.types';
+import { Credit, Media, MediaCategorySlug } from '@/data/data.types';
 import { mediaData } from '@/data/media.data';
+import { creditsData } from '@/data/credits.data';
 
 type Props = {
   mediaData?: Media[];
+  creditsData?: Credit[];
 };
 
 type SearchParams = {
@@ -10,18 +12,34 @@ type SearchParams = {
   categories?: MediaCategorySlug[] | MediaCategorySlug;
 };
 
+type MediaWithCredits = Media & {
+  credits: Credit[];
+};
+
 export class MediaRepo {
-  private data: Media[];
+  private media: Media[];
+  private credits: Credit[];
   constructor(props?: Props) {
-    this.data = props?.mediaData ?? mediaData;
+    this.media = props?.mediaData ?? mediaData;
+    this.credits = props?.creditsData ?? creditsData;
   }
-  findByCategory = (category: MediaCategorySlug): Media[] => {
-    return this.data.filter((media) => media.category === category);
+  findByCategory = (category: MediaCategorySlug): MediaWithCredits[] => {
+    return this.withDenormalizedCredits(
+      this.media.filter((media) => media.category === category)
+    );
   };
-  findBySlug = (slug: string): Media | null => {
-    return this.data.filter((media) => media.media_slug === slug)?.[0] ?? null;
+  findBySlug = (slug: string): MediaWithCredits | null => {
+    const media =
+      this.media.filter((media) => media.media_slug === slug)?.[0] ?? null;
+    if (media === null) {
+      return null;
+    }
+    return this.withDenormalizedCredits([media])[0];
   };
-  search = (params: SearchParams, sortByRelevance = true): Media[] => {
+  search = (
+    params: SearchParams,
+    sortByRelevance = true
+  ): MediaWithCredits[] => {
     const { tagSlugs, categories: searchCategs } = params;
     const slugs = typeof tagSlugs === 'string' ? [tagSlugs] : tagSlugs;
     const categories =
@@ -29,8 +47,8 @@ export class MediaRepo {
 
     const data: Media[] =
       categories !== undefined
-        ? this.data.filter((media) => categories.includes(media.category))
-        : this.data;
+        ? this.media.filter((media) => categories.includes(media.category))
+        : this.media;
 
     let filtered: Media[] = [];
 
@@ -65,6 +83,23 @@ export class MediaRepo {
         });
       }
     }
-    return filtered;
+
+    return this.withDenormalizedCredits(filtered);
+  };
+
+  withDenormalizedCredits = (media: Media[]): MediaWithCredits[] => {
+    return media.map((media) => {
+      const credits: Credit[] = [];
+      (media.creditsIds ?? []).forEach((creditId) => {
+        const credit = this.credits.filter((cred) => cred.id === creditId)?.[0];
+        if (credit) {
+          credits.push(credit);
+        }
+      });
+      return {
+        ...media,
+        credits: credits,
+      };
+    });
   };
 }
