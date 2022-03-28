@@ -1,24 +1,26 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { BadRequest } from '@tsed/exceptions';
-import { MainVideoPage } from '@/features/video/main-video-page';
 import { videoConfig } from '@/features/video/video.config';
 import { SupportedLang } from '@/features/video/types';
 import { SiteConfigUtils } from '@/core/config/site- config.utils';
 import { Asserts } from '@contredanse/common';
-import { MediaCategRepo } from '@/features/video/repository/media-categ.repo';
-import { MediaCategorySlug } from '@/data/data.types';
 
 type Props = {
-  categorySlug: MediaCategorySlug;
+  tagSlugs: string[];
   lang: SupportedLang;
 };
 
-export default function VideoCategoryRoute(
+export default function VideoTagsRoute(
   props: InferGetServerSidePropsType<typeof getServerSideProps>
 ) {
-  const { lang, categorySlug } = props;
-  return <MainVideoPage lang={lang} categorySlug={categorySlug} />;
+  const { lang, tagSlugs } = props;
+  return (
+    <>
+      <h1>Hello here's the tag slugs I received</h1>
+      <pre>{JSON.stringify(tagSlugs)}</pre>
+    </>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (
@@ -28,19 +30,18 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
   if (locale === undefined || !SiteConfigUtils.isSupportedLocale(locale)) {
     throw new BadRequest('locale is missing or not supported');
   }
-  const { slug: categorySlug } = context.params ?? {};
-  Asserts.nonEmptyString(categorySlug, () => {
-    throw new BadRequest('categorySlug must be a non empty string');
+  const { tags } = context.params ?? {};
+
+  Asserts.nonEmptyString(tags, () => {
+    throw new BadRequest('tags must be a non empty string');
   });
-  if (!new MediaCategRepo().exists(categorySlug)) {
-    return {
-      notFound: true,
-    };
-  }
+
+  const tagSlugs = tags.split(':').filter((tag) => tag.trim() !== '');
+
   const { i18nNamespaces } = videoConfig;
   return {
     props: {
-      categorySlug: categorySlug,
+      tagSlugs: tagSlugs,
       lang: locale,
       // @see https:/github.com/i18next/react-i18next/pull/1340#issuecomment-874728587
       ...(await serverSideTranslations(locale, i18nNamespaces.slice())),
