@@ -1,16 +1,22 @@
-import { GetServerSideProps } from 'next';
-import { MenuPage } from '@/features/menu/menu.page';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { BadRequest } from '@tsed/exceptions';
-import { menuConfig } from '@/features/menu/menu.config';
-import { SiteConfigUtils } from '@/core/config/site- config.utils';
+import {
+  SiteConfigUtils,
+  SupportedLocales,
+} from '@/core/config/site- config.utils';
+import { creditsConfig } from '@/features/credits/credits.config';
+import { CreditsPage } from '@/features/credits/credits.page';
 
 type Props = {
-  /** add what's needed in case */
+  locale: SupportedLocales;
 };
 
-export default function MenuRoute() {
-  return <MenuPage lang={'en'} />;
+export default function CreditsRoute(
+  props: InferGetServerSidePropsType<typeof getServerSideProps>
+) {
+  const { locale } = props;
+  return <CreditsPage locale={locale} />;
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (
@@ -20,9 +26,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
   if (locale === undefined || !SiteConfigUtils.isSupportedLocale(locale)) {
     throw new BadRequest('locale is missing or not supported');
   }
-  const { i18nNamespaces } = menuConfig;
+  const { i18nNamespaces } = creditsConfig;
   return {
     props: {
+      locale: locale,
       // @see https:/github.com/i18next/react-i18next/pull/1340#issuecomment-874728587
       ...(await serverSideTranslations(locale, i18nNamespaces.slice())),
     },

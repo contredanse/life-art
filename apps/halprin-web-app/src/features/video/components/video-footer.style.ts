@@ -57,14 +57,15 @@ export const Ctn = styled.div`
   }
   .embed-menu {
     margin-left: 80px;
-    margin-bottom: 10px;
+    margin-top: -130px;
     width: 100px;
     cursor: pointer;
     .toggle {
       margin-left: 20px;
       height: 30px;
-      margin-bottom: -4px;
+      margin-top: 90px;
     }
+    position: fixed;
   }
   @media only screen and (max-width: 1200px) {
     min-height: 180px;
@@ -80,13 +81,20 @@ export const Ctn = styled.div`
       }
     }
   }
+  @media only screen and (min-width: 950px) and (max-height: 782px) {
+    bottom: -25px;
+  }
+  @media only screen and (min-width: 650px) and (max-height: 729px) {
+    position: absolute;
+    z-index: -1;
+  }
   @media only screen and (max-width: 950px) {
     min-height: 130px;
     max-height: 130px;
   }
-  @media only screen and (max-width: 650px) {
-    min-height: 150px;
-    max-height: 150px;
+  @media only screen and (max-width: 796px) {
+    min-height: 200px;
+    max-height: 200px;
     .topBar {
       .desktop {
         display: none;

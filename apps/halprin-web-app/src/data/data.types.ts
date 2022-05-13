@@ -1,7 +1,26 @@
+export type MediaTag = {
+  id?: number;
+  tag_slug?: string;
+  label?: { fr: string; en: string };
+  media?: Media[];
+  relevance?: number;
+};
+
 export type Tag = {
-  id: number;
-  tag_slug: string;
+  id?: number;
+  tag_slug?: string;
   label: { fr: string; en: string };
+  media?: Media[];
+  relevance?: number;
+};
+
+export type MediaCategory = {
+  categ_slug: MediaCategorySlug;
+  label: {
+    en: string;
+    fr: string;
+  };
+  tag_slug?: string;
 };
 
 export type LocalizedMediaUrl = {
@@ -10,14 +29,6 @@ export type LocalizedMediaUrl = {
 };
 
 export type MediaUrl = string | LocalizedMediaUrl;
-
-export type MediaCategory = {
-  categ_slug: MediaCategorySlug;
-  label: {
-    en: string;
-    fr: string;
-  };
-};
 
 export type MediaCategorySlug =
   | 'life-art'
@@ -42,18 +53,42 @@ export type Credit = {
   };
 };
 
+export type CleanedCredit = {
+  year?: number;
+  index?: boolean;
+  id: number;
+  label: string;
+};
+
 export type Media = {
-  media_slug: string;
-  type: 'audio' | 'video';
-  url: MediaUrl;
+  media_slug?: string;
+  type?: 'audio' | 'video';
+  url?: MediaUrl;
   vimeo_id?: string;
   tracks?: MediaTracks;
   thumb: string;
-  category: MediaCategorySlug;
+  category?: MediaCategorySlug;
   moment?: string;
+  tags?: { tag_slug: string; relevance: number }[];
+  creditsIds?: number[];
+  title?: {
+    fr: string;
+    en: string;
+  };
+};
+
+export type RepoMedia = {
+  media_slug: string;
+  type?: 'audio' | 'video';
+  url: MediaUrl;
+  vimeo_id: string;
+  tracks: MediaTracks;
+  thumb: string;
+  category: MediaCategorySlug;
+  moment: string;
   tags: { tag_slug: string; relevance: number }[];
   creditsIds?: number[];
-  title: {
+  title?: {
     fr: string;
     en: string;
   };

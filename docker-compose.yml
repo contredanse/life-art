@@ -46,6 +46,7 @@ services:
   contredanse-main-db:
     container_name: contredanse-main-db
     image: postgres:13-alpine
+
     ports:
       - target: 5432
         published: 5432

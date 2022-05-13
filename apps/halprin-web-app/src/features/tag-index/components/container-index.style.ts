@@ -1,14 +1,17 @@
 import styled from '@emotion/styled';
 
 export const Ctn = styled.div`
-  overflow-y: scroll;
-  overflow-x: hidden;
   padding: 5px;
   margin-top: 15px;
   width: 60%;
+  padding-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
-  height: 70%;
+  height: 75%;
+  .container {
+    height: 90%;
+    overflow-y: auto;
+  }
   .selected {
     color: red;
     &:hover {
@@ -19,6 +22,7 @@ export const Ctn = styled.div`
     cursor: pointer;
     margin: 5px;
   }
+
   table {
     width: 100%;
     tr {
@@ -46,9 +50,21 @@ export const Ctn = styled.div`
   }
   @media only screen and (max-width: 1520px) {
     height: 60%;
+    .video-container {
+      margin-top: -3%;
+    }
   }
   @media only screen and (max-width: 650px) {
-    width: 95%;
+    .video-container {
+      height: 0;
+      background: red;
+      margin-top: -120px;
+    }
+    height: 80%;
+    width: 96%;
+    .container {
+      height: 80%;
+    }
     .mobile {
       display: block;
       width: 100%;
