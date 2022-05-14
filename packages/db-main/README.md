@@ -2,12 +2,12 @@
 
 ## Quick start
 
-Start the database with `docker-compose up database` then run
+> Tip: Start the database with `docker-compose up -d contredanse-main-db` in the root directory then run
 
 ```bash
 cd packages/db-main
-yarn prisma:db:push
-yarn prisma:db:seed
+yarn prisma:db:push   # Will push latest schema (do not in production)
+yarn prisma:db:seed   # Will seed the database with default data
 ```
 
 > See the .env(.local|.production|.development) file to edit the connection.
@@ -27,9 +27,9 @@ Ensure you have docker and docker-compose and run
 
 ```bash
 # In the root folder
-docker-compose up database
+docker-compose up contredanse-main-db
 # Alternatively, from any folder
-yarn docker:up
+yarn docker:up:db
 ```
 
 #### Option 2: An hosted postgres instance

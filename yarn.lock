@@ -3669,6 +3669,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/bcryptjs@npm:2.4.2":
+  version: 2.4.2
+  resolution: "@types/bcryptjs@npm:2.4.2"
+  checksum: 220dade7b0312b41e23ccfb15f2ddde7804eb3c7ef41db41a6c49054be1e19a15eb3dd8c8ef196494f0866307cce22ad6f3f272941387124707d81dc66155bbc
+  languageName: node
+  linkType: hard
+
 "@types/cors@npm:2.8.12":
   version: 2.8.12
   resolution: "@types/cors@npm:2.8.12"
@@ -5131,6 +5138,15 @@ __metadata:
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
   checksum: 669632eb3745404c2f822a18fc3a0122d2f9a7a13f7fb8b5823ee19d1d2ff9ee5b52c53367176ea4ad093c332fd5ab4bd0ebae5a8e27917a4105a4cfc86b1005
+  languageName: node
+  linkType: hard
+
+
+
+"bcryptjs@npm:2.4.3":
+  version: 2.4.3
+  resolution: "bcryptjs@npm:2.4.3"
+  checksum: 0e80ed852a41f5dfb1853f53ee14a7390b0ef263ce05dba6e2ef3cd919dfad025a7c21ebcfe5bc7fa04b100990edf90c7a877ff7fe623d3e479753253131b629
   languageName: node
   linkType: hard
 
@@ -8788,13 +8804,17 @@ __metadata:
     "@testing-library/jest-dom": 5.14.1
     "@testing-library/react": 12.1.4
     "@testing-library/react-hooks": 7.0.2
-    "@tsed/exceptions": 6.107.5
+    "@tsed/exceptions": 6.64.2
+    "@types/bcryptjs": 2.4.2
+
     "@types/cors": 2.8.12
     "@types/graphql": 14.5.0
     "@types/node": 16.10.3
     "@types/react": 17.0.43
     "@types/react-dom": 17.0.9
     "@types/xml2js": 0.4.9
+
+    bcryptjs: 2.4.3
     "@typescript-eslint/eslint-plugin": 5.10.2
     "@typescript-eslint/parser": 5.10.2
     apollo-server-core: 3.4.0
@@ -8848,6 +8868,7 @@ __metadata:
     shell-quote: 1.7.3
     size-limit: 6.0.3
     string-strip-html: 8.3.0
+    superjson: 1.7.5
     symlink-dir: 5.0.1
     sync-directory: 4.0.12
     tailwindcss: 2.2.17
@@ -16313,6 +16334,16 @@ resolve@^2.0.0-next.3:
   version: 4.0.13
   resolution: "stylis@npm:4.0.13"
   checksum: 8ea7a87028b6383c6a982231c4b5b6150031ce028e0fdaf7b2ace82253d28a8af50cc5a9da8a421d3c7c4441592f393086e332795add672aa4a825f0fe3713a3
+  languageName: node
+  linkType: hard
+
+"superjson@npm:1.7.5":
+  version: 1.7.5
+  resolution: "superjson@npm:1.7.5"
+  dependencies:
+    debug: ^4.3.1
+    lodash.clonedeep: ^4.5.0
+  checksum: 629c3cf3343203f8ab585046a7dfb9c730df3e08b00f4e78a029ddf148f93c22c65e0455dc4a7c6a72b3228dd9a8b39ff46ed5845ca555c14e92d85e02d2cae5
   languageName: node
   linkType: hard
 

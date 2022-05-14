@@ -17,6 +17,7 @@
 #      layer sizes                                                #
 ###################################################################
 
+
 FROM node:17-alpine AS workspaces-full-install
 RUN apk add --no-cache rsync
 
@@ -75,15 +76,16 @@ WORKDIR /app
 COPY . .
 COPY --from=workspaces-full-install /workspace-install ./
 
-RUN NEXTJS_IGNORE_ESLINT=1 yarn workspace web-app build
+RUN NEXTJS_IGNORE_ESLINT=1 yarn workspace haplrin-web-app build
 
 RUN --mount=type=cache,target=/root/.yarn-cache \
     SKIP_POSTINSTALL=1 \
     YARN_CACHE_FOLDER=/root/.yarn-cache \
-    yarn workspaces focus web-app --production
+    yarn workspaces focus halprin-web-app --production
 
 
 # For production
+
 FROM node:17-alpine AS production
 
 WORKDIR /app
@@ -93,10 +95,10 @@ ENV NODE_ENV production
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 
-COPY --from=builder /app/apps/web-app/next.config.js ./apps/web-app/
-COPY --from=builder /app/apps/web-app/package.json ./apps/web-app/
-COPY --from=builder /app/apps/web-app/public ./apps/web-app/public
-COPY --from=builder --chown=nextjs:nodejs /app/apps/web-app/.next ./apps/web-app/.next
+COPY --from=builder /app/apps/haplrin-web-app/next.config.js ./apps/haplrin-web-app/
+COPY --from=builder /app/apps/haplrin-web-app/package.json ./apps/haplrin-web-app/
+COPY --from=builder /app/apps/haplrin-web-app/public ./apps/haplrin-web-app/public
+COPY --from=builder --chown=nextjs:nodejs /app/apps/haplrin-web-app/.next ./apps/haplrin-web-app/.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 
@@ -106,10 +108,11 @@ EXPOSE 8000
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
-CMD ["./node_modules/.bin/next", "apps/web-app/", "-p", "8000"]
+CMD ["./node_modules/.bin/next", "apps/halprin-web-app/", "-p", "8000"]
 
 
 # For development
+
 FROM node:17-alpine AS web-app-dev
 ENV NODE_ENV=development
 
@@ -118,5 +121,5 @@ WORKDIR /app
 COPY --from=workspaces-full-install /workspace-install ./
 
 EXPOSE 8000
-CMD ["yarn", "workspace", "web-app", "dev", "-p", "8000"]
+CMD ["yarn", "workspace", "halprin-web-app", "dev", "-p", "8000"]
 
