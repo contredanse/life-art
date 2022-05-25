@@ -8846,7 +8846,7 @@ __metadata:
     sass: 1.43.2
     sharp: 0.29.1
     shell-quote: 1.7.3
-    size-limit: 6.0.3
+    size-limit: 6.0.4
     string-strip-html: 8.3.0
     symlink-dir: 5.0.1
     sync-directory: 4.0.12
@@ -11928,12 +11928,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanospinner@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "nanospinner@npm:0.3.0"
+"nanospinner@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "nanospinner@npm:0.4.0"
   dependencies:
-    picocolors: ^0.2.0
-  checksum: 4b0099b9ddb0e43411e70c81cae8d001c58aa4f077f778a43fad4228a3cd73a7beaf8f991ec6a3d049bff7b4203e1384c937810a7ce7f39bb3be73f850c20f49
+    picocolors: ^1.0.0
+  checksum: 7eecf6bcced0ba798797f992b16d91e2642d500a6f28169c875aaf15438b57fb331be607c298715eb7fc6255d24e0f08e3e502b8ea79311718011b748369189d
   languageName: node
   linkType: hard
 
@@ -13165,7 +13165,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^0.2.0, picocolors@npm:^0.2.1":
+"picocolors@npm:^0.2.1":
   version: 0.2.1
   resolution: "picocolors@npm:0.2.1"
   checksum: 3b0f441f0062def0c0f39e87b898ae7461c3a16ffc9f974f320b44c799418cabff17780ee647fda42b856a1dc45897e2c62047e1b546d94d6d5c6962f45427b2
@@ -15625,20 +15625,20 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"size-limit@npm:6.0.3":
-  version: 6.0.3
-  resolution: "size-limit@npm:6.0.3"
+"size-limit@npm:6.0.4":
+  version: 6.0.4
+  resolution: "size-limit@npm:6.0.4"
   dependencies:
     bytes-iec: ^3.1.1
     chokidar: ^3.5.2
     ci-job-number: ^1.2.2
     globby: ^11.0.4
     lilconfig: ^2.0.3
-    nanospinner: ^0.3.0
-    picocolors: ^0.2.1
+    nanospinner: ^0.4.0
+    picocolors: ^1.0.0
   bin:
     size-limit: bin.js
-  checksum: 2dd873273cabe215f7c2e98bb924085269437dae8a93e44cf2fd25ddc78378569e092ed65e8acfb4cc16b2cce8b6fd47f86623886a478a1a83649b4b207ef0b4
+  checksum: b595828f295b37a8cb5a0a3f4275e93356e477a6046ef7b259ee23b2328007add2e1cc0f73ab02b0fef6a424340b10f01133cfff6a1b7ded62a011b589070d68
   languageName: node
   linkType: hard
 
