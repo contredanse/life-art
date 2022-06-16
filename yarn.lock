@@ -1953,7 +1953,7 @@ __metadata:
     "@testing-library/react-hooks": 7.0.2
     "@tsed/exceptions": ^6.73.9
     "@types/node": 16.10.3
-    "@types/react": 17.0.43
+    "@types/react": 17.0.47
     "@types/react-dom": 17.0.9
     "@typescript-eslint/eslint-plugin": 5.10.2
     "@typescript-eslint/parser": 5.10.2
@@ -3898,14 +3898,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:17.0.43, @types/react@npm:>=16.9.0":
-  version: 17.0.43
-  resolution: "@types/react@npm:17.0.43"
+"@types/react@npm:*, @types/react@npm:17.0.47, @types/react@npm:>=16.9.0":
+  version: 17.0.47
+  resolution: "@types/react@npm:17.0.47"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 981b0993f5b3ea9d3488b8cc883201e8ae47ba7732929f788f450a79fd72829e658080d5084e67caa008e58d989b0abc1d5f36ff0a1cda09315ea3a3c0c9dc11
+  checksum: 2e7fe0eb630cb77da03b6da308c58728c01b38e878118e9ff5cd8045181c8d4f32dc936e328f46a62cadb56e1fe4c5a911b5113584f93a99e1f35df7f059246b
   languageName: node
   linkType: hard
 
@@ -8792,7 +8792,7 @@ __metadata:
     "@types/cors": 2.8.12
     "@types/graphql": 14.5.0
     "@types/node": 16.10.3
-    "@types/react": 17.0.43
+    "@types/react": 17.0.47
     "@types/react-dom": 17.0.9
     "@types/xml2js": 0.4.9
     "@typescript-eslint/eslint-plugin": 5.10.2
