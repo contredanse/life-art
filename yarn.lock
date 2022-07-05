@@ -8825,7 +8825,7 @@ __metadata:
     ky: 0.28.6
     micro: 9.3.4
     next: 11.1.2
-    next-auth: 3.29.0
+    next-auth: 3.29.8
     next-connect: 0.11.1
     next-i18next: 8.9.0
     next-secure-headers: 2.2.0
@@ -11967,9 +11967,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-auth@npm:3.29.0":
-  version: 3.29.0
-  resolution: "next-auth@npm:3.29.0"
+"next-auth@npm:3.29.8":
+  version: 3.29.8
+  resolution: "next-auth@npm:3.29.8"
   dependencies:
     "@babel/runtime": ^7.14.0
     "@next-auth/prisma-legacy-adapter": 0.1.2
@@ -11986,7 +11986,7 @@ __metadata:
   peerDependencies:
     react: ^16.13.1 || ^17
     react-dom: ^16.13.1 || ^17
-  checksum: 7c866bc275fce113f2ce48c1a5d48f33cdb621d4910a7a6661f7497e6c56b4073b179d1846a09cf8d4ba665cb7e3717e149f605d4f32e64c25a51b20a01345e6
+  checksum: 3ab0986e771ed523f4053f737dda5be832789eebcee34c973d1f484bfd39db35d6dcd68c4875641d2a5834de8fa3def81692825ef82d7cb25354193bf531109c
   languageName: node
   linkType: hard
 

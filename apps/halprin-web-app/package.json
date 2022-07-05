@@ -125,7 +125,7 @@
     "ky": "0.28.6",
     "micro": "9.3.4",
     "next": "11.1.2",
-    "next-auth": "3.29.0",
+    "next-auth": "3.29.8",
     "next-connect": "0.11.1",
     "next-i18next": "8.9.0",
     "next-secure-headers": "2.2.0",
